@@ -1,3 +1,602 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+#fp-nav{
+	display: none !important;
+}
+
+
+.showMenu{
+	.mainHeader{
+		.mainmenu{
+			display: block;
+			top: -50px;
+			visibility: visible;
+			opacity: 1;
+			z-index: 25;
+			height: 103vh;
+			width: 110%;
+			left: -30px;
+			pointer-events: all;
+			z-index:999999;
+			@include breakpoint(1024 down){
+				top: 50px;
+			}
+
+			@include breakpoint(600 down){
+				top:50px;
+				width:115%;
+			}
+
+			@include breakpoint(500 down){
+			}
+		}
+	}
+}
+
+.fp-viewing-firstPage{
+	.mainHeader{
+		top: 40px;
+
+		@include breakpoint(1024 down){
+			top: 20px;
+		}
+
+	}
+}
+.pasek{
+		width:100%;
+		background-color:white;
+		padding:15px 0 15px;
+		//height:35px;
+		color:#a8a8a8;
+		@include breakpoint(800 down){
+			padding:0px 0;
+		}
+		.s2{
+			display:none;
+		}
+		.mainHeader__logo2{
+			display:none;
+			@include breakpoint(800 down){
+				display:block;
+				float:left;
+				overflow:hidden;
+				position:relative;
+				z-index:999;
+				width:60px;
+				padding-top:5px;
+			}
+			@include breakpoint(600 down){
+				width:50px;
+				padding-top:10px;
+			}
+		}
+		.mainHeader__logo{
+			width: 375px;
+			position: relative;
+			overflow: hidden;
+			float: left;
+			display: block;
+			z-index: 999;
+
+			@include breakpoint(1200 down){
+				width:320px;
+			}
+			@include breakpoint(900 down){
+				width:250px;
+				padding-top:10px;
+			}
+			@include breakpoint(800 down){
+				display:none;
+			}
+			@include breakpoint(600 down){
+				margin-left:-20px;
+				width:auto;
+				width:150px;
+			}
+			@include breakpoint(500 down){
+				margin-left:-5px;
+			}
+			@include breakpoint(450 down){
+				width:100px;
+			}
+
+			img{
+				@include breakpoint(500 down){
+					width: 140px;
+				}
+
+			}
+		}
+		.rightsidemenuup{
+			float:right;
+			position:relative;
+			padding:15px 0;
+
+			@include breakpoint(1024 down){
+				right:0px;
+			}
+			@include breakpoint(600 down){
+				right:0px;
+			}
+
+			.logowaniebutton{
+				font-size:14px;
+				color:white;
+				padding:8px 15px;
+				background-color:$color1;
+				@include breakpoint(1024 down){
+					font-size:12px;
+					padding:6px 13px;
+				}
+				@include breakpoint(800 down){
+					display:none;
+				}
+			}
+			.lbm{
+				display:none;
+				margin-right:10px;
+				//background-color:$color1;
+				i{
+					color:$color1;
+					font-size:24px;
+					padding:5px;
+				}
+
+				@include breakpoint(800 down){
+					display:inline-block;
+				}
+				@include breakpoint(500 down){
+					margin-right:0;
+					i{
+						font-size:18px;
+					}
+				}
+				
+			}
+			.searchbar {
+			  height: auto;
+			  display: inline-block;
+			  justify-content: center;
+			  align-items: center;
+			  padding-left:15px;
+			  border-left:1px solid $color3;
+				button{
+					display:none;
+				}
+				@include breakpoint(500 down){
+					padding-left:5px;
+				}
+				#szk{
+					@include breakpoint(500 down){
+						font-size:12px;
+					}
+					@include breakpoint(400 down){
+						font-size:11px;
+					}
+				}
+			  #searchbar-input {
+			    border: 0px solid;
+			    border-bottom: 2px solid black;
+			    width: 200px;
+			    height:24px;
+			    font-size: 24px;
+			    outline: none;
+			   	margin:0;
+			   	padding:0;
+			    color: #606060;
+			    display: none;
+			    box-shadow:none;
+			    @include breakpoint(1280 down){
+			    	width:150px;
+			    }
+			    @include breakpoint(1100 down){
+			    	width:125px;
+			    }
+			    @include breakpoint(1024 down){
+			    	width:90px;
+			    }
+			    @include breakpoint(850 down){
+			    	width:70px;
+			    }
+			  }
+			  
+			  #searchbar-cross {
+			    display: none;
+			    font-size: 20px;
+			    cursor: pointer;
+			    color:$color1;
+			    @include breakpoint(600 down){
+			    	font-size:18px;
+			    }
+
+			  }
+			  
+			  #searchbar-icon {
+			    font-size: 24px;
+			    cursor: pointer;
+			    color:$color1;
+			    @include breakpoint(600 down){
+			    	font-size:20px;
+			    }
+			  }
+			}
+			.cart{
+				padding-left:35px;
+				display:inline-block;
+				padding-right:10px;
+				position:relative;
+				color:$color1;
+				//transition:0.2s;
+				@include breakpoint(1280 down){
+					padding-left:10px;
+				}
+				@include breakpoint(1100 down){
+					padding-right:5px;
+				}
+				@include breakpoint(500 down){
+					padding-left:5px;
+				}
+				&:hover{
+					
+						.productsList{
+							transition:0.1s;
+							visibility: visible;
+						}
+				}
+				.sum{
+					padding-left:15px;
+					color:$color2;
+					font-size:18px;
+					font-weight:600;
+					@include breakpoint(1024 down){
+						font-size:15px;
+					}
+					@include breakpoint(800 down){
+						font-size:13px;
+					}
+					@include breakpoint(500 down){
+						font-size:11px;
+						padding-left:5px;
+					}
+				}
+				i{
+					font-size:28px;
+					position:relative;
+					@include breakpoint(800 down){
+						font-size:24px;
+					}
+					@include breakpoint(500 down){
+						font-size:18px;
+					}
+					.il{
+						width:18px;
+						height:18px;
+						background-color:$color3;
+						border-radius:50%;
+						position:absolute;
+						right:-10px;
+						top:-8px;
+						@include breakpoint(1100 down){
+							right:-10px;
+						}
+						@include breakpoint(1024 down){
+							width:15px;
+							height:15px;
+							right:-7px;
+							top:-5px;
+						}
+						@include breakpoint(500 down){
+							width:12px;
+							height:12px;
+							right:-5px;
+						}
+						span{
+							color:$color2;
+							font-size:12px;
+							left:35%;
+							top:20%;
+							position:absolute;
+							@include breakpoint(500 down){
+								font-size:10px;
+								top:5%;
+								left:30%;
+							}
+							
+						}
+					}
+				}
+			}
+		}
+		
+		
+	}
+.rightside{
+	float:right;
+	color:$color1;
+	text-transform:uppercase;
+	padding:5px 0 5px;
+	font-size:16px;
+	.txtrs{
+		font-size:16px;
+		@include breakpoint(500 down){
+			font-size:12px;
+		}
+	}
+	@include breakpoint(1024 down){
+		float:left;
+	}
+}
+.mainHeader{
+	position: relative;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom:8px;
+	background-color:$color1;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	z-index: 1;
+	transition: 1s cubic-bezier(0.22, 0.44, 0, 1);
+	transition-delay: 0.4s;
+	
+	@include breakpoint(1500 down){
+		//top: 20px;
+		//width: calc( 100% - 60px );
+	}
+
+	@include breakpoint(500 down){
+		//top: 10px;
+		//width: calc( 100% - 30px );
+	}
+
+	.burgerWrap {
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		text-align: center;
+		margin-left: auto;
+		//top: 10px;
+		right: 0;
+		margin-right: auto;
+		font-size: em(15);
+		text-align: center;
+		display: none;			
+		top:-5px;
+		@include breakpoint(1024 down) {
+			display: block;
+			float: none;
+			z-index: 36;
+			right: 30px;
+			margin: auto;
+		}
+		@include breakpoint(600 down){
+			right:0px;
+		}
+		@include breakpoint(500 down){
+			right:-10px;
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			.burger {
+				@include burger(29px, 2px, 5px, $color1);
+			}
+		}
+
+		.burger {
+			@include burger(29px, 2px, 5px, $color1);
+			transition: 0.2s;
+			margin: 0 auto;
+			position: relative;
+			z-index: 999;
+			
+			.showMenu &{
+				@include burger-to-cross;
+			}
+		}
+	}
+
+	.mainHeader__menu{
+		float: left;
+		margin-left:-10px;
+		@include breakpoint(1280 down){
+			margin-left:5px;
+		}
+		@include breakpoint(1024 down){
+			position: absolute;
+			pointer-events: none;
+			opacity: 0;
+			visibility: hidden;
+			width: 10%;
+			left: -30px;
+			right: -30px;
+			overflow: hidden;
+			margin-left: auto;
+			margin-right: auto;
+			z-index: 24;
+			top: 0px;
+			height: 102vh;
+			text-align: center;
+			background-color: rgba(#000, 0.9);
+			border-bottom: 2px solid $color2;
+			transition: 0.5s  ;
+			padding-bottom: 30px;
+			padding-top: 80px;
+		}
+
+		ul.menu{
+
+			@include breakpoint(1024 down){
+				display: block;
+				margin: 0;
+			}
+
+			
+
+			li{
+				margin: 0px 6px;
+				position: relative;
+				@include breakpoint(1280 down){
+					margin:0 0;
+				}
+				a{
+					@include breakpoint(1100 down){
+						
+					}
+					@include breakpoint(1280 down){
+						font-size:em(14);
+					}
+					font-size: 16px;
+					font-weight:400;
+					line-height: em(16,16);
+					color: white;
+					padding: 10px 15px;
+					text-transform:uppercase;
+					transition: 0.2s;
+					@include breakpoint(1024 down){
+						color:white;
+					}
+					&:before{
+						display: none;
+					}
+
+					
+
+					&:after{
+						content:"";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin: auto;
+						width: 100%;
+						height: 2px;
+						background-color: $color1;
+						opacity: 0.8;
+						width: 0%;
+						transition: 0.4s ;
+
+						@include breakpoint(1024 down){
+							display: none;
+						}
+					}
+
+					&:hover{
+						color: $color2;
+
+						&:after{
+							width: 100%;
+						}
+					}
+
+				}
+
+				&.active{
+					a{
+						background-color: transparent;
+					}
+				}
+
+				&.parent{
+					position: relative;
+
+					&:hover{
+						ul{
+							opacity: 1;
+							pointer-events: all;
+							height: auto;
+							transform: translateY(0px);
+
+							@include breakpoint(1024 down){
+								padding: 10px;
+							}
+							li{
+								@include breakpoint(1024 down){
+									height: auto;
+									margin: 10px 0;
+								}
+
+							}
+						}
+					}
+
+					>ul{
+						position: absolute;
+						width: 200%;
+						text-align: center;
+						left: 0px;
+						margin: 0;
+						transition: 0.3s;
+						opacity: 0;
+						left: -50%;
+						top: 35px;
+						pointer-events: none;
+						padding: 10px;
+						transform: translateY(50px);
+						background-color: rgba($color2, 0.9);
+
+						@include breakpoint(1024 down){
+							width: 200px;
+							background-color: rgba($color1, 0.9);
+							position: relative;
+							height: 0;
+							margin: 0 auto;
+							left: 0;
+							right: 0;
+							top: 0;
+							padding: 0;
+						}
+						li{
+							list-style: none;
+							text-align: center;
+							margin: 14px 0;
+							display: block;
+
+							@include breakpoint(1024 down){
+								height: 0;
+								margin: 0;
+							}
+
+
+							a{
+								text-align: center;
+								padding: 0;
+								font-size: em(14);
+
+								@include breakpoint(1024 down){
+									&:hover{
+										color:$color2!important;
+									}
+								}
+
+								&:hover{
+									color: $color1;
+								}
+
+								&:after{
+									display: none;
+								}
+
+								&:before{
+									display: none;
+								}
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.sticky{
+	position:fixed;
+	top:0;
+	width:100%;
+	border-bottom:2px solid $color1;
+	z-index:9999999999999;
+}

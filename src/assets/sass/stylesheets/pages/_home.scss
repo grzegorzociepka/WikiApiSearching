@@ -1,3 +1,52 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+body{
+	background-color:$color3;
+}
+.container{
+
+	background-color:white;
+	.list{
+		padding-top:20px;
+		position:relative;
+		.item{
+			text-align: center;
+			width:100%;
+			padding:120px 0;
+			background-color:$color1;
+			text-align:center;
+			.btn{
+				display:inline-block;
+				padding:7px 20px;
+				background-color:white;
+			}
+			.wrapit{
+				padding-top:20px;
+				width:100%;
+				text-align: center;
+			}
+			.subtitle{
+				//float:left;
+				color:white;
+				font-size:24px;
+				display: inline-block;
+			}
+			input{
+				width:300px;
+				
+				display:inline-block;
+			}
+			.name{
+				display:block;
+
+			}
+			.ct{
+				display:inline-block;
+			}
+			.ok{
+				display:inline-block;
+			}
+		}
+	}
+}

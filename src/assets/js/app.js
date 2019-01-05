@@ -8,6 +8,7 @@ import Foundation from 'foundation-sites';
 import { default as swal } from 'sweetalert2'
 require('@fancyapps/fancybox/dist/jquery.fancybox.css');
 const fancybox = require('@fancyapps/fancybox');
+var getJSON = require('get-json');
 
 import is from '!imports-loader?define=>undefined!is_js';
 /*
@@ -93,3 +94,56 @@ const App = {
 }
 window.showMessage = App.showMessage;
 App.init();
+
+let counter = 0;
+
+$(".btn").click(function(){
+        counter = 0;
+    })
+
+var test = function(){
+    
+    $("#input").change(function(){
+        goWiki($("#input").val());
+    });
+
+   function goWiki(term){
+        counter = counter + 1;
+        if(counter < 11){
+           let SearchLink = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
+           let url = SearchLink + term;
+           getJSON(url, gotData);
+        }
+        //let term = $("#input").val();
+        
+   }
+   function gotData(error, response){
+        let Content = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=";
+        let len = response[1].length;
+        console.log(response);
+        let index = Math.floor((Math.random() * len));
+        let title = response[1][index];
+        if(title!= null){
+            title = title.replace(/\s+/g, "_");
+        }
+        else{
+            title = "hitler";
+        }
+        let WikiLink = response[3][index];
+        let url = Content + title;
+
+        $(".items").append('<a href="'+response[3][index]+'" target="_blank">'+title+'</a><br>');
+        getJSON(url, gotSearch);
+   }
+   function gotSearch(error, response){
+    let page = response.query.pages;
+    let PageId = Object.keys(response.query.pages)[0];
+    let content = page[PageId].revisions[0]['*'];
+    let Regex = /\b\w{4,}\b/g;
+    var words = content.match(Regex);
+    var word = words[Math.floor(Math.random()*words.length)];
+    goWiki(word);
+   }
+
+}
+test();
