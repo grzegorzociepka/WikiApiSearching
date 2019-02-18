@@ -10,6 +10,7 @@ require('@fancyapps/fancybox/dist/jquery.fancybox.css');
 const fancybox = require('@fancyapps/fancybox');
 var getJSON = require('get-json');
 
+
 import is from '!imports-loader?define=>undefined!is_js';
 /*
 * APP
@@ -117,31 +118,42 @@ var test = function(){
         //let term = $("#input").val();
         
    }
+
    function gotData(error, response){
         let Content = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=";
         let len = response[1].length;
-        console.log(response);
+        
         let index = Math.floor((Math.random() * len));
         let title = response[1][index];
         if(title!= null){
             title = title.replace(/\s+/g, "_");
         }
         else{
-            title = "hitler";
+            title = "unicorn";
         }
         let WikiLink = response[3][index];
         let url = Content + title;
 
-        $(".items").append('<a href="'+response[3][index]+'" target="_blank">'+title+'</a><br>');
+        $(".items").append('<tr><td>'+title+'</td><td><a href="'+WikiLink+'">Click!</a></td></tr>');
+
         getJSON(url, gotSearch);
    }
+
    function gotSearch(error, response){
+    
     let page = response.query.pages;
+
     let PageId = Object.keys(response.query.pages)[0];
     let content = page[PageId].revisions[0]['*'];
-    let Regex = /\b\w{4,}\b/g;
+    let title = page[PageId].title;
+    let ArrayWords = title.split(" ");
+    let AW = ArrayWords[Math.floor(Math.random()*ArrayWords.length)];
+    //console.log(AW);    
+    var Regex = new RegExp(AW);
     var words = content.match(Regex);
+    
     var word = words[Math.floor(Math.random()*words.length)];
+    console.log(word);
     goWiki(word);
    }
 

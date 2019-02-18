@@ -1,28 +1,22 @@
 {% extends 'tpl/layouts/app.twig' %}
 {% block contentView %}
-<div class="wrapper first">
-	<div class="wrapper">
-		<div class="container">
-			<div class="list">
-				<div class="item">
-					<div class="tableHelper">
-						<div class="cellHelper">
-							<h3>Wikipedia Related Posts To Given Word</h3>
-							<div class="wrapit">
-								<div class="subtitle">Word:	</div> <input type="text" id="input" value="Enter Something">
-								<div class="btn">Click to be able get new search</div>
-								<div class="clear"></div>
-							</div>
-							
-							<div class="items"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
+<h1><span class="blue">&lt;</span>Api<span class="blue">&gt;</span> <span class="yellow">Wikipedia</pan></h1>
+	<div class="searchbar">
+		<div class="subtitle">Word:	</div> <input type="text" id="input" value="Enter Something">
+		<div class="btn">Reset to search another one</div>
 	</div>
-</div>
+
+
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Sites</h1></th>
+			<th><h1>Links</h1></th>
+
+		</tr>
+	</thead>
+	<tbody class="items">
+		
+	</tbody>
+</table>
 {% endblock %}
